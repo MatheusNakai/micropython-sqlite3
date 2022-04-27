@@ -1,7 +1,7 @@
 import sqlite3
 
 class Sqlite(object):
-    
+
     def __init__(self):
         self.db = None
         self.create_connection()
@@ -86,30 +86,26 @@ class Sqlite(object):
             return list_Of_Dictionary
         else:
             print("tabela vazia")
+    
+    def create_table(self, dictionary: dict):
+        table = dictionary.pop("table")
+        keys = ""
+        for key, value in dictionary.items():
+            keys += f"{key} TEXT,"
+            print(key)
+        keys =keys[:-1]
+        query = f"CREATE TABLE {table} ({keys});"
+        print(query)
+        self.execute_query(query)
+        self.db.commit()
 
 
-
-    # def create_Table(self, dictionary: dict):
-    #     table = dictionary["table"]
-    #     query = f"CREATE TABLE {table} ("
-    #     for key, value in dictionary.items():
-    #         if type(value) is int or bool:
-    #             data_type = "INTEGER"
-    #         if type(value) is str:
-    #             data_type = "TEXT"
-
-    #         query += f"{key} {data_type},"
-    #     query = query[:-1]
-    #     query += ")"
-    #     print(query)
-    #     self.execute_query(query)
-        
 sqlite= Sqlite()
 a={
-    "row": "*",
-    "table": "users",
-    "where": "id>0"
+    "table":"test",
+    "a":"a",
+    "b":1,
+    "c":"2"
 }
-print(a.pop("table"))
-print(a)
-#sqlite.insert_one(a)
+
+sqlite.create_table(a)
