@@ -1,4 +1,7 @@
+
+
 class User(object):
+
     def __init__(self, id: int, password: int, table: str):
         self.id = id
         self.table = table
