@@ -107,5 +107,3 @@ a={
     "b":1,
     "c":"2"
 }
-
-sqlite.create_table(a)
