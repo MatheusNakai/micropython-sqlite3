@@ -1,6 +1,7 @@
 from models.Sqlite import Sqlite
 
 class Sqlite_controller(object):
+    
     def __init__(self):
         self.sqlite = Sqlite()
 
