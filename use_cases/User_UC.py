@@ -1,6 +1,7 @@
 from controller.User_controller import User_controller
 
 class User_Uc(object):
+    
     def __init__(self, user_controller: User_controller):
         self.user_c = user_controller
 
