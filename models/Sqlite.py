@@ -1,6 +1,7 @@
 import sqlite3
 
 class Sqlite(object):
+    
     def __init__(self):
         self.db = None
         self.create_connection()
